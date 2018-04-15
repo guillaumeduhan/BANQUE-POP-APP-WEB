@@ -1,0 +1,117 @@
+/**************
+***
+***  Custom CSS Master
+***  Made by @guillaumeduhan
+***  Date: 15/04/2018 à 17:55:15
+***
+**************/
+
+/* General */
+
+textarea:focus, input:focus, select:focus, button, button:active, button:focus, :focus {
+  outline: none!important;
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+
+/* Boxes */
+
+.box__module {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-height:120px;
+  background:white;
+  border-radius:25px;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
+  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
+}
+
+@media screen and (max-width: 640px) {
+  .box__module {
+    margin-bottom:25px;
+  }
+}
+
+select {
+  font-size:12px;
+  background:transparent;
+  margin:5px 0;
+}
+
+option {
+  color:red;
+}
+
+/* Buttons, modals */
+
+.v--modal-box.v--modal{
+  height:fit-content!important;
+}
+
+@media screen and (max-width: 640px) {
+  .v--modal-box.v--modal{
+    width:100%!important;
+  }
+}
+
+.bouton {
+  margin:0 2px;
+}
+.bouton:hover {
+  background:#F8880F;
+}
+.green__button {
+  background: -webkit-linear-gradient(top, #5bff3a 0%,#25db31 100%);
+}
+.blue__button {
+  color:white;
+  background-color: #2B55A0;
+}
+.question__modal {
+  margin-top:auto;
+  margin-bottom:auto;
+  padding:25px;
+  text-align:center;
+}
+.question__modal .image {
+  width:75px;
+  border-radius:50px;
+  overflow:hidden;
+}
+.question__modal img {
+  width:100%;
+}
+
+.question__modal .infos {
+  width: 100%;
+  margin:25px 0;
+}
+.question__modal .infos h2 {
+  font-size:17px;
+  font-weight:700;
+  color:#2B55A0;
+  margin:0;
+}
+.question__modal .infos p {
+  font-weight:700;
+  line-height:1.35;
+  margin:0;
+}
+.question__modal .infos h2, p {
+  margin:4px 0;
+}
+.question__modal a {
+  padding:20px 0;
+}
+.question__modal .time {
+  font-size:12px;
+  font-weight:300;
+  color:lightgrey;
+}
+.question__modal textarea {
+  width:100%;
+  border:1px solid #ddd;
+  border-radius:5px;
+}
