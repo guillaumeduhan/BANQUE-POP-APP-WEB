@@ -1,7 +1,8 @@
 <template>
   <div id="Comptes">
+    <beat-loader :loading="loading" :color="color" :size="size"></beat-loader>
     <div class="row">
-      <div class="col">
+      <div class="col first">
         <div class="box__module">
           <div class="image">
             <img src="../assets/gd.jpg" alt="Guillaume Duhan">
@@ -16,7 +17,7 @@
           </div>
         </div>
       </div>
-      <div class="col">
+      <div class="col special">
         <div class="box__module">
           <div class="image">
             <img src="../assets/portrait2.png" alt="Conseiller">
@@ -30,43 +31,21 @@
             <div class="btn" @click="showMail()">
               <i class="far fa-envelope"></i>
             </div>
-            <div class="btn">
+            <div class="btn" @click="showPhone()">
               <i class="fas fa-phone"></i>
             </div>
-            <div class="btn">
+            <div class="btn" @click="showCalendar()">
               <i class="far fa-calendar-alt"></i>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <div class="box__module"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="box__module">
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="box__module"></div>
-      </div>
-    </div>
-    <modal name="logout">
-      <div class="question__modal">
-        <p>Voulez-vous vraiment vous déconnecter?</p>
-        <div class="btn blue__button bouton" @click="hideLogOut()">
-          Oui
-        </div>
-        <div class="btn blue__button bouton" @click="hideLogOut()">
-          Non
-        </div>
-      </div>
-    </modal>
+
+    <draggable v-model="myArray" :options="{group:'people'}" @start="drag=true" @end="drag=false">
+      <div class="box__module" v-for="element in myArray" :key="element.id">{{element.name}}</div>
+    </draggable>
+
     <modal name="send_mail">
       <div class="question__modal">
         <p>Message destiné à:</p>
@@ -85,10 +64,34 @@
         </div>
       </div>
     </modal>
+
+    <modal name="show_phone">
+      <div class="question__modal">
+        <div class="infos">
+          <p>Votre conseiller</p>
+          <h2>Mr Richard LEGRAND</h2>
+          <p class="time">05 63 63 47 47</p>
+        </div>
+      </div>
+    </modal>
+
+    <modal name="show_calendar">
+      <div class="question__modal">
+        <p>Prendre rendez-vous:</p>
+        <datetime v-model="datetime" zone="Europe/Paris" type="datetime" class="theme-blue"></datetime>
+        <div class="btn blue__button bouton" @click="hideCalendar()">
+          Confirmez la date
+        </div>
+      </div>
+    </modal>
+
   </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+import Datetime from 'vue-datetime'
+
 export default {
   name: "Comptes",
   data () {
@@ -105,6 +108,19 @@ export default {
         }, {
           content:"Autre sujet"
         }
+      ],
+      myArray: [
+        {
+          id: 1,
+          name: 'One'
+        },{
+          id: 2,
+          name: 'Two'
+        },{
+          id: 3,
+          name: 'Three'
+        }
+
       ]
     }
   },
@@ -120,7 +136,19 @@ export default {
     },
     hideMail:function(){
       this.$modal.hide('send_mail');
+    },
+    showPhone:function() {
+      this.$modal.show('show_phone');
+    },
+    showCalendar:function() {
+      this.$modal.show('show_calendar');
+    },
+    hideCalendar:function() {
+      this.$modal.hide('show_calendar');
     }
+  },
+  components: {
+    draggable
   }
 }
 </script>
@@ -128,16 +156,33 @@ export default {
 <style lang="scss" scoped>
 
   #Comptes {
+    padding:25px 50px;
     width:calc(100% - 300px);
+    .first {
+      padding-left:0;
+      @media screen and (max-width: 1020px) {
+        padding:0;
+      }
+    }
+    .special {
+      padding-right:0px;
+      margin-right:0px;
+      @media screen and (max-width: 1020px) {
+        padding:0;
+      }
+    }
+    .theme-blue {
+      margin:25px 0;
+    }
     .row {
       width:100%;
-      padding:50px 50px 0px 50px;
+      margin-left:0;
+      margin-right:0;
       @media screen and (max-width: 640px) {
         padding:0;
         margin:0;
       }
       .box__module {
-        padding:25px;
         .image {
           width:75px;
           border-radius:50px;
@@ -191,6 +236,7 @@ export default {
     }
     @media screen and (max-width: 640px) {
       margin-top:110px;
+      padding:10px;
       width:100%;
     }
   }
