@@ -30,6 +30,16 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
   box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
 }
 
+.box__module .drag {
+  height:25px;
+  max-width:25px;
+}
+
+.box__module .drag img {
+  max-width:100%;
+  opacity:.5;
+}
+
 @media screen and (max-width: 640px) {
   .box__module {
     margin-bottom:25px;

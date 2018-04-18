@@ -43,7 +43,12 @@
     </div>
 
     <draggable v-model="myArray" :options="{group:'people'}" @start="drag=true" @end="drag=false">
-      <div class="box__module" v-for="element in myArray" :key="element.id">{{element.name}}</div>
+      <div class="box__module" v-for="element in comptes" :key="element.id">
+        <p>{{element.name}}</p>
+        <div class="drag">
+          <img src="../assets/drag.png" alt="drag">
+        </div>
+      </div>
     </draggable>
 
     <modal name="send_mail">
@@ -78,7 +83,7 @@
     <modal name="show_calendar">
       <div class="question__modal">
         <p>Prendre rendez-vous:</p>
-        <datetime v-model="datetime" zone="Europe/Paris" type="datetime" class="theme-blue"></datetime>
+        <datetime v-model="datetime" zone="Europe/Paris" type="datetime" class="theme-blue" placeholder="Choisir une date"></datetime>
         <div class="btn blue__button bouton" @click="hideCalendar()">
           Confirmez la date
         </div>
@@ -91,6 +96,7 @@
 <script>
 import draggable from 'vuedraggable'
 import Datetime from 'vue-datetime'
+import Drag from '../assets/drag.png'
 
 export default {
   name: "Comptes",
@@ -109,7 +115,7 @@ export default {
           content:"Autre sujet"
         }
       ],
-      myArray: [
+      comptes: [
         {
           id: 1,
           name: 'One'
