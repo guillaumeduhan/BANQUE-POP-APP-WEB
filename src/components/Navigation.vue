@@ -42,7 +42,7 @@
     </modal>
     <modal name="mail">
       <div class="question__modal">
-        
+
       </div>
     </modal>
   </div>
@@ -57,7 +57,7 @@ export default {
       menu: [
         {
           content: "Mon espace",
-          link: "/espace",
+          link: "/",
           class: ""
         },{
           content: "Mes comptes",
@@ -65,19 +65,19 @@ export default {
           class: ""
         },{
           content: "Mes opérations",
-          link: "/operations",
+          link: "/",
           class: ""
         },{
           content: "Gérer au quotidien",
-          link: "/gestion",
+          link: "/",
           class: ""
         },{
           content: "Épargner",
-          link: "/epargne",
+          link: "/",
           class: ""
         },{
           content: "Emprunter/Assurer",
-          link: "/emprunt",
+          link: "/",
           class: ""
         },
       ],

@@ -2,7 +2,7 @@
 ***
 ***  Custom CSS Master
 ***  Made by @guillaumeduhan
-***  Date: 15/04/2018 à 17:55:15
+***  Date: 21/04/2018 à 14:47:32
 ***
 **************/
 
@@ -32,17 +32,89 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
 
 .box__module .drag {
   height:25px;
-  max-width:25px;
+  width:25px!important;
 }
 
 .box__module .drag img {
-  max-width:100%;
+  width:25px!important;
   opacity:.5;
+}
+
+.box__module .infos {
+  width: 100%;
+  padding-left:25px;
+}
+.box__module .infos h2 {
+  font-size:17px;
+  font-weight:700;
+  color:#2B55A0;
+  margin:0;
+}
+.box__module .infos p {
+  font-weight:700;
+  line-height:1.35;
+  margin:0;
+}
+.box__module .infos h2, p {
+  margin:4px 0;
+}
+.box__module .infos a {
+  padding:20px 0;
+}
+.box__module .infos .time {
+  font-size:12px;
+  font-weight:300;
+  color:lightgrey;
+}
+.box__module .buttons {
+  display:flex;
+  text-align:center;
+  margin:0 25px;
+}
+.box__module .buttons .box__button {
+  font-size:14px;
+  margin:0 15px;
+  color:#EFEFEF;
+}
+.box__module .buttons .box__button p {
+  position:absolute;
+  right:200px;
+  display:none;
+}
+.box__module .buttons .box__button .svg-inline--fa {
+  font-size:25px!important;
+}
+.box__module .buttons .box__button:hover {
+  cursor:pointer;
+  color:#2B55A0;
+  transition:.25s;
+}
+
+@media screen and (max-width: 1266px) {
+  .box__module {
+    margin-bottom:25px;
+  }
+  .box__module .buttons .box__button p, .time {
+    display:none;
+  }
+  .box__module .buttons {
+    display:inline-block;
+    margin:0;
+  }
+  .disappear {
+    display:none;
+  }
 }
 
 @media screen and (max-width: 640px) {
   .box__module {
     margin-bottom:25px;
+  }
+  .box__module .buttons .box__button .svg-inline--fa {
+    font-size:19px!important;
+  }
+  .box__module .buttons .box__button {
+    margin:0;
   }
 }
 

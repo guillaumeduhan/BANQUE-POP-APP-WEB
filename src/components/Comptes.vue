@@ -44,8 +44,21 @@
 
     <draggable v-model="myArray" :options="{group:'people'}" @start="drag=true" @end="drag=false">
       <div class="box__module" v-for="element in comptes" :key="element.id">
-        <p>{{element.name}}</p>
-        <div class="drag">
+        <div class="box__icon">
+          <img :src="element.imgSource" alt="icon">
+        </div>
+        <div class="infos">
+          <p>{{element.content}}</p>
+          <h2 v-bind:class="element.class">{{element.montant}} <span>{{element.type}}</span></h2>
+          <p class="time disappear">{{element.spec}}</p>
+        </div>
+        <div class="buttons">
+          <div class="box__button" v-for="element in buttons">
+            <i v-bind:class="element.fontSource"></i>
+            <p>{{element.text}}</p>
+          </div>
+        </div>
+        <div class="drag disappear">
           <img src="../assets/drag.png" alt="drag">
         </div>
       </div>
@@ -97,6 +110,9 @@
 import draggable from 'vuedraggable'
 import Datetime from 'vue-datetime'
 import Drag from '../assets/drag.png'
+import Icon1 from "../assets/credit-card.png"
+import Icon2 from "../assets/coins.png"
+import Icon3 from "../assets/cheque.png"
 
 export default {
   name: "Comptes",
@@ -118,15 +134,48 @@ export default {
       comptes: [
         {
           id: 1,
-          name: 'One'
+          name: 'One',
+          class: "text-success",
+          imgSource: Icon1,
+          content: "Compte courant",
+          montant: "3,247",
+          type: "EUR",
+          spec: "Dernière opération: Vendredi 12 Septembre à 14h02"
         },{
           id: 2,
-          name: 'Two'
+          name: 'Two',
+          class: "text-success",
+          imgSource: Icon2,
+          content: "Livret A",
+          montant: "12,546",
+          type: "EUR",
+          spec: "Taux journalier: 2,234% (mise à jour à 10h34)"
         },{
           id: 3,
-          name: 'Three'
+          name: 'Three',
+          imgSource: Icon3,
+          class: "text-danger",
+          content: "Compte chèques",
+          montant: "-216,02",
+          type: "EUR",
+          spec: "Dernière opération: Samedi 28 Février à 12h23"
         }
 
+      ],
+      buttons: [
+        {
+          fontSource: "fas fa-eye",
+          text: "Consulter"
+        },{
+          fontSource: "fas fa-cog disappear",
+          text: "Virements"
+        },{
+          fontSource: "fas fa-users disappear",
+          text: "Bénéficiaires"
+        },{
+          fontSource: "fas fa-ellipsis-h",
+          text: "Autre"
+        }
       ]
     }
   },
@@ -180,6 +229,12 @@ export default {
     .theme-blue {
       margin:25px 0;
     }
+    .box__icon {
+      height:60px;
+      img {
+        height:100%;
+      }
+    }
     .row {
       width:100%;
       margin-left:0;
@@ -195,32 +250,6 @@ export default {
           overflow:hidden;
           img {
             width:100%;
-          }
-        }
-        .infos {
-          width: 100%;
-          padding-left:25px;
-          h2 {
-            font-size:17px;
-            font-weight:700;
-            color:#2B55A0;
-            margin:0;
-          }
-          p {
-            font-weight:700;
-            line-height:1.35;
-            margin:0;
-          }
-          h2, p {
-            margin:4px 0;
-          }
-          a {
-            padding:20px 0;
-          }
-          .time {
-            font-size:12px;
-            font-weight:300;
-            color:lightgrey;
           }
         }
       }
