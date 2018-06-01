@@ -8,6 +8,10 @@
 
 /* General */
 
+.col {
+  padding-left:0;
+}
+
 textarea:focus, input:focus, select:focus, button, button:active, button:focus, :focus {
   outline: none!important;
   box-shadow: none;
@@ -22,7 +26,7 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
   justify-content: space-between;
   max-height:120px;
   padding:25px;
-  margin:0 0 25px 0;
+  margin:0 0 20px 0;
   background:white;
   border-radius:25px;
   -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
@@ -45,7 +49,7 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
   padding-left:25px;
 }
 .box__module .infos h2 {
-  font-size:17px;
+  font-size:16px;
   font-weight:700;
   color:#2B55A0;
   margin:0;

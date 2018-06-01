@@ -6,6 +6,8 @@ import BootstrapVue from 'bootstrap-vue'
 import VModal from 'vue-js-modal'
 import draggable from 'vuedraggable'
 import Datetime from 'vue-datetime'
+import VueCharts from 'vue-chartjs'
+import { Bar, Line } from 'vue-chartjs'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'

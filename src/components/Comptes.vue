@@ -1,6 +1,5 @@
 <template>
   <div id="Comptes">
-    <beat-loader :loading="loading" :color="color" :size="size"></beat-loader>
     <div class="row">
       <div class="col first">
         <div class="box__module">
@@ -64,6 +63,16 @@
       </div>
     </draggable>
 
+    <div class="row" id="charts">
+      <div class="box__module col">
+        Row 1
+      </div>
+
+      <div class="box__module col">
+        Row 2
+      </div>
+    </div>
+
     <modal name="send_mail">
       <div class="question__modal">
         <p>Message destiné à:</p>
@@ -107,9 +116,9 @@
 </template>
 
 <script>
-import draggable from 'vuedraggable'
-import Datetime from 'vue-datetime'
-import Drag from '../assets/drag.png'
+import draggable from "vuedraggable"
+import Datetime from "vue-datetime"
+import Drag from "../assets/drag.png"
 import Icon1 from "../assets/credit-card.png"
 import Icon2 from "../assets/coins.png"
 import Icon3 from "../assets/cheque.png"
@@ -212,6 +221,7 @@ export default {
 
   #Comptes {
     padding:25px 50px;
+    max-width:1200px;
     width:calc(100% - 300px);
     .first {
       padding-left:0;
@@ -267,6 +277,11 @@ export default {
         @media screen and (max-width: 640px) {
           flex-direction: column;
         }
+      }
+    }
+    #charts {
+      div:first-child {
+        margin-right:10px;
       }
     }
     @media screen and (max-width: 640px) {

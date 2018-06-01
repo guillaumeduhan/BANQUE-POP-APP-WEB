@@ -61,7 +61,7 @@ export default {
           class: ""
         },{
           content: "Mes comptes",
-          link: "/comptes",
+          link: "/",
           class: ""
         },{
           content: "Mes opérations",
@@ -114,6 +114,9 @@ export default {
       let navigation = window.document.getElementById('Navigation');
       navigation.style.left = "-300px";
       this.burger = !this.burger;
+    },
+    hide:function(){
+      this.$modal.hide('logout');
     }
   }
 }

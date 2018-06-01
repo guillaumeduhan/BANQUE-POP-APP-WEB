@@ -5,12 +5,13 @@ import VueRouter from 'vue-router'
 import App from "../App.vue"
 import Navigation from "../components/Navigation.vue"
 import Comptes from "../components/Comptes.vue"
+import LineChart from "../components/LineChart.vue"
 
 // Routes
 Vue.use(VueRouter)
 const routes = [
   {
-    path: '/comptes',
+    path: '/',
     component: Comptes
   }
 ]
