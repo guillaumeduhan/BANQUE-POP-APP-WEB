@@ -6,16 +6,15 @@
 </template>
 
 <script>
+
 import Navigation from './components/Navigation.vue'
 import Comptes from './components/Comptes.vue'
-import LineChart from './components/LineChart.vue'
 
 export default {
   name: 'app',
   components: {
     Navigation,
-    Comptes,
-    LineChart
+    Comptes
   }
 }
 </script>
