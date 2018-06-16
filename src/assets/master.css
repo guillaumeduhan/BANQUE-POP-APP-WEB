@@ -21,6 +21,7 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
 /* Boxes */
 
 .box__module {
+  width:100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,17 +33,15 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
   -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
   box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
 }
-
 .box__module .drag {
+  cursor:pointer;
   height:25px;
   width:25px!important;
 }
-
 .box__module .drag img {
   width:25px!important;
   opacity:.5;
 }
-
 .box__module .infos {
   width: 100%;
   padding-left:25px;
@@ -77,7 +76,7 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
 .box__module .buttons .box__button {
   font-size:14px;
   margin:0 15px;
-  color:#EFEFEF;
+  color:#DDD;
 }
 .box__module .buttons .box__button p {
   position:absolute;
@@ -91,6 +90,37 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
   cursor:pointer;
   color:#2B55A0;
   transition:.25s;
+}
+#abonnements .box__module .buttons {
+  width:100%;
+}
+#abonnements .box__module .subscription .infos {
+  padding:0;
+}
+.box__module .buttons .subscription {
+  width:33%;
+  margin:0 3px;
+  border-radius:25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:7px 12px;
+  border:1px solid rgba(6, 59, 221, 0.1);
+}
+.box__module .buttons__hidden {
+  display:none;
+}
+.box__module .buttons .subscription .infos .price {
+  color:#2B55A0;
+}
+.box__module .buttons .subscription .infos .date {
+  color:#2B55A0;
+}
+.box__module .buttons .subscription .infos .name {
+  font-size:12px;
+}
+.box__module .buttons .subscription .fa-times {
+  cursor:pointer;
 }
 
 @media screen and (max-width: 1266px) {
@@ -106,6 +136,15 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
   }
   .disappear {
     display:none;
+  }
+  .box__module .buttons .subscription {
+    display:none;
+  }
+  #abonnements .box__module .buttons {
+    width:auto;
+  }
+  .box__module .buttons__hidden {
+    display:block;
   }
 }
 
@@ -201,4 +240,38 @@ option {
   width:100%;
   border:1px solid #ddd;
   border-radius:5px;
+}
+
+/* Annonce box */
+
+.annonce__box {
+  position:absolute;
+  bottom:10px;
+  right:25px;
+  max-width:600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:15px 25px;
+  margin:0 0 20px 0;
+  background:#249D3D;
+  font-weight:100;
+  color:white;
+  border-radius:2px;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
+  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
+  animation: slideUp 1s;
+}
+
+/* Keyframes */
+
+@keyframes slideUp {
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;
+  }
 }

@@ -31,7 +31,7 @@
     <img src="../assets/cancel.png" class="cross__menu" id="cross" @click="closeMenu()" />
     <modal name="logout">
       <div class="question__modal">
-        <p>Voulez-vous vraiment vous déconnecter?</p>
+        <p>Voulez-vous vous déconnecter?</p>
         <div class="btn blue__button bouton" @click="hide()">
           Oui
         </div>

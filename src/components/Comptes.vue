@@ -41,7 +41,7 @@
       </div>
     </div>
 
-    <draggable v-model="myArray" :options="{group:'people'}" @start="drag=true" @end="drag=false">
+    <draggable :options="{group:'people'}" @start="drag=true" @end="drag=false">
       <div class="box__module" v-for="element in comptes" :key="element.id">
         <div class="box__icon">
           <img :src="element.imgSource" alt="icon">
@@ -64,12 +64,42 @@
     </draggable>
 
     <div class="row" id="charts">
-      <div class="box__module col">
-        Row 1
+      <div class="box__module col" v-for="element in miniModules">
+        <p class="box__icon">
+          <img :src="element.imgSource" alt="icon">
+        </p>
+        <div class="infos">
+          <p>{{element.name}}</p>
+          <h2 v-bind:class="element.class">{{element.number}} <span>{{element.type}}</span></h2>
+          <p class="time disappear">{{element.event}}, {{element.date}}</p>
+        </div>
       </div>
+    </div>
 
-      <div class="box__module col">
-        Row 2
+    <div class="row" id="abonnements">
+      <div class="box__module" v-for="element in abonnements">
+        <p class="box__icon">
+          <img :src="element.imgSource" alt="icon">
+        </p>
+        <div class="infos">
+          <p>{{element.name}}</p>
+          <p class="time disappear">{{element.descriptif}}</p>
+        </div>
+        <div class="buttons">
+          <div class="subscription" v-for="element in liste">
+            <div class="infos">
+              <p class="price">{{element.number}} <span>{{element.type}}</span> </p>
+              <p class="name disappear">{{element.name}}</p>
+            </div>
+            <i class="fas fa-times" @click="showCancel()"></i>
+          </div>
+          <div class="buttons__hidden">
+            <div class="box__button" v-for="element in buttons">
+              <i v-bind:class="element.fontSource"></i>
+              <p>{{element.text}}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -112,6 +142,22 @@
       </div>
     </modal>
 
+    <modal name="show_cancel">
+      <div class="question__modal">
+        <p>Voulez-vous annuler cet abonnement?</p>
+        <div class="btn blue__button bouton" @click="hideCancel()">
+          Annuler
+        </div>
+      </div>
+    </modal>
+
+    <div class="annonce__box" id="annonce" v-if="annonce == true">
+      <p>Cyberplus revisité en Vue 3.0 par Guillaume Duhan.</p>
+      <div class="btn" @click="hideAnnonce()">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -122,6 +168,9 @@ import Drag from "../assets/drag.png"
 import Icon1 from "../assets/credit-card.png"
 import Icon2 from "../assets/coins.png"
 import Icon3 from "../assets/cheque.png"
+import Icon4 from "../assets/hand.png"
+import Icon5 from "../assets/discount.png"
+import Icon6 from "../assets/search.png"
 
 export default {
   name: "Comptes",
@@ -185,7 +234,55 @@ export default {
           fontSource: "fas fa-ellipsis-h",
           text: "Autre"
         }
-      ]
+      ],
+      miniModules: [
+        {
+          name: "Dernier évènement",
+          number: "13,10",
+          type: "EUR",
+          class: "text-success",
+          event: "Monop', Paris 15",
+          date: "Mercredi 10 Septembre à 08h32",
+          imgSource: Icon4,
+          status: "Validé"
+        },{
+          name: "Dépense moyenne",
+          number: "26,63",
+          type: "EUR",
+          class: "",
+          event: "Calculé sur les 12 derniers mois",
+          date: "aujourd'hui",
+          imgSource: Icon5,
+          status: "Validé"
+        }
+      ],
+      abonnements: [
+        {
+          name: "Paiements automatiques",
+          descriptif: "Liste de tous les paiements mensuels auxquels vous avez souscrit.",
+          imgSource: Icon6
+        }
+      ],
+      liste: [
+        {
+          name: "Orange",
+          number: "9,99",
+          type: "EUR",
+          date: "le 6 de chaque mois"
+        },{
+          name: "KeepCool",
+          number: "24,99",
+          type: "EUR",
+          date: "le 8 de chaque mois"
+        },{
+          name: "SNCF",
+          number: "18,29",
+          type: "EUR",
+          date: "le 3 de chaque mois"
+        }
+      ],
+      annonce: true,
+      datetime: ""
     }
   },
   methods: {
@@ -209,6 +306,16 @@ export default {
     },
     hideCalendar:function() {
       this.$modal.hide('show_calendar');
+    },
+    hideAnnonce:function(){
+      this.annonce = false
+    },
+    showCancel:function() {
+      console.log("ça marche");
+      // this.$modal.show('show_cancel');
+    },
+    hideCancel:function() {
+      this.$modal.hide('show_cancel');
     }
   },
   components: {
