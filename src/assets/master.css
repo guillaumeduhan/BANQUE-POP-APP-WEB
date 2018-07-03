@@ -264,6 +264,20 @@ option {
   animation: slideUp 1s;
 }
 
+/* Transition */
+
+.fade-enter, .fade-leave-to {
+  opacity:0
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition:opacity 3s;
+}
+
+.v--modal-overlay .v--modal-box {
+  height:auto!important;
+}
+
 /* Keyframes */
 
 @keyframes slideUp {

@@ -61,7 +61,7 @@ export default {
           class: ""
         },{
           content: "Mes comptes",
-          link: "/",
+          link: "/compte-courant",
           class: ""
         },{
           content: "Mes opérations",

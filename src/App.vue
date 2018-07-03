@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Navigation />
-    <router-view></router-view>
+    <transition name="router-anim" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -24,6 +26,7 @@ export default {
 <style>
 
 @import './assets/master.css';
+@import './assets/animate.css';
 
 #app {
   background-color:rgb(254,254,254);

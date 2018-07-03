@@ -1,0 +1,12 @@
+{
+  compte: {
+    lol: {
+      date: "03/",
+      libellé: "",
+      ref: "",
+      dateOperation: "",
+      debit: "",
+      credit: ""
+    }
+  }
+}
