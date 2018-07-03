@@ -91,7 +91,9 @@
               <p class="price">{{element.number}} <span>{{element.type}}</span> </p>
               <p class="name disappear">{{element.name}}</p>
             </div>
-            <i class="fas fa-times" @click="showCancel()"></i>
+            <div @click="showCancel()">
+              <i class="fas fa-times"></i>
+            </div>
           </div>
           <div class="buttons__hidden">
             <div class="box__button" v-for="element in buttons">
@@ -146,13 +148,16 @@
       <div class="question__modal">
         <p>Voulez-vous annuler cet abonnement?</p>
         <div class="btn blue__button bouton" @click="hideCancel()">
-          Annuler
+          Oui
+        </div>
+        <div class="btn blue__button bouton" @click="hideCancel()">
+          Non
         </div>
       </div>
     </modal>
 
     <div class="annonce__box" id="annonce" v-if="annonce == true">
-      <p>Cyberplus revisité en Vue 3.0 par Guillaume Duhan.</p>
+      <p>Cyberplus revisité par Guillaume Duhan.<br>Framework: Vue 3.0.0.</p>
       <div class="btn" @click="hideAnnonce()">
         <i class="fas fa-times"></i>
       </div>
@@ -295,7 +300,7 @@ export default {
     showMail:function() {
       this.$modal.show('send_mail');
     },
-    hideMail:function(){
+    hideMail:function() {
       this.$modal.hide('send_mail');
     },
     showPhone:function() {
@@ -312,7 +317,7 @@ export default {
     },
     showCancel:function() {
       console.log("ça marche");
-      // this.$modal.show('show_cancel');
+      this.$modal.show('show_cancel');
     },
     hideCancel:function() {
       this.$modal.hide('show_cancel');
