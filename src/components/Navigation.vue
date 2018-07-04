@@ -132,6 +132,7 @@ export default {
   display:flex;
   flex-flow: column;
   width:300px;
+  height: 100vh;
   transition:1s;
   background-color:white;
   height:-webkit-fill-available;
