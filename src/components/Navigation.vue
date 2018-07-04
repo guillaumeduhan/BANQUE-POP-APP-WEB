@@ -23,7 +23,7 @@
         </li>
       </ul>
     </nav>
-    <div id="log__out">
+    <div id="log__out" @click="show()">
       <p>Se déconnecter</p>
       <img src="../assets/logout.png" alt="logout">
     </div>
@@ -115,6 +115,9 @@ export default {
       navigation.style.left = "-300px";
       this.burger = !this.burger;
     },
+    show:function(){
+      this.$modal.show('logout');
+    },
     hide:function(){
       this.$modal.hide('logout');
     }
@@ -143,10 +146,10 @@ export default {
     width:100%;
     padding: 20px 20px 20px 75px;
     #logo__responsive__general {
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 780px) {
       }
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
       display:block;
     }
   }
@@ -155,13 +158,13 @@ export default {
   }
   .box {
     padding:25px 35px;
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
       padding:0px 35px;
     }
   }
   .box_logo {
     padding:50px 35px;
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
       padding:20px 70px 20px 25px;
     }
   }
@@ -214,7 +217,7 @@ export default {
         line-height:1.5;
         margin:6px 0;
         transition:.25s;
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 780px) {
           font-size:16px;
           line-height:1;
           padding:12px 0;
@@ -226,7 +229,7 @@ export default {
         cursor:pointer;
       }
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
       display:none;
     }
   }
@@ -238,14 +241,14 @@ export default {
     top:0;
     z-index:1;
     cursor:pointer;
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
       display:block;
       right:-50px;
       top:25px;
     }
   }
   #cross {
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
       display:block;
       right:25px;
       top:25px;
@@ -277,11 +280,11 @@ export default {
       filter:invert(100%);
       margin-left:5px;
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
       display:flex;
     }
   }
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 780px) {
     position:absolute;
     left:-300px;
     transition:1s;

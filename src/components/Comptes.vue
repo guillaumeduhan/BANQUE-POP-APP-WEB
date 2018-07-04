@@ -129,7 +129,7 @@
       <div class="infos">
         <p>Votre conseiller</p>
         <h2>Mr Richard LEGRAND</h2>
-        <p class="time">05 63 63 47 47</p>
+        <p class="grey">05 63 63 47 47</p>
       </div>
     </div>
   </modal>
@@ -348,7 +348,7 @@ export default {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 780px) {
             padding: 0;
             margin: 0;
         }
@@ -373,7 +373,7 @@ export default {
         .options {
             display: flex;
             flex-direction: row;
-            @media screen and (max-width: 640px) {
+            @media screen and (max-width: 780px) {
                 flex-direction: column;
             }
         }
@@ -383,7 +383,7 @@ export default {
             margin-right: 10px;
         }
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
         margin-top: 110px;
         padding: 10px;
         width: 100%;

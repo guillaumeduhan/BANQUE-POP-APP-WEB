@@ -21,12 +21,12 @@
           </thead>
           <tbody>
             <tr v-for="element in operations">
-              <td>{{element.date}}</td>
+              <td class="disappear">{{element.date}}</td>
               <td><a href="#">{{element.libelle}}</a></td>
-              <td class="disappear">{{element.ref}}</td>
-              <td class="disappear">{{element.dateOperation}}</td>
-              <td>{{element.debit}}</td>
-              <td>{{element.credit}}</td>
+              <td class="disappear ref">{{element.ref}}</td>
+              <td class="disappear date">{{element.dateOperation}}</td>
+              <td class="debit">{{element.debit}}</td>
+              <td class="text-success">{{element.credit}}</td>
             </tr>
           </tbody>
         </table>
@@ -54,7 +54,7 @@ export default {
         }
       ],
       titres: [
-        ["Date"],
+        ["Date", "disappear"],
         ["Libellé"],
         ["Réf.", "disappear"],
         ["Date d'opération", "disappear"],
@@ -171,7 +171,7 @@ export default {
       width:100%;
       margin-left:0;
       margin-right:0;
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 780px) {
         padding:0;
         margin:0;
       }
@@ -196,7 +196,7 @@ export default {
       .options {
         display: flex;
         flex-direction: row;
-        @media screen and (max-width: 640px) {
+        @media screen and (max-width: 780px) {
           flex-direction: column;
         }
       }
@@ -206,7 +206,7 @@ export default {
         margin-right:10px;
       }
     }
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 780px) {
       margin-top:110px;
       padding:10px;
       width:100%;
@@ -215,7 +215,7 @@ export default {
       width:100%;
     }
     td {
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 780px) {
         margin:0 20px;
       }
     }
@@ -223,7 +223,10 @@ export default {
       font-size:.9em;
       line-height:2.5;
       border-bottom:1px solid rgba(245, 245, 245, .5);
+        @media screen and (max-width: 780px) {
+        }
       a {
+        font-weight:400;
         color:#2261d0;
         transition:color .2s;
       }
@@ -233,8 +236,18 @@ export default {
         transition:color .2s;
       }
     }
+    .date, .ref {
+      color:lightgrey;
+      font-weight:100;
+    }
+    .debit, .credit {
+      font-weight:400;
+    }
+    .debit {
+      color:#2261d0;
+    }
     .disappear {
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 780px) {
           display:none;
       }
     }
