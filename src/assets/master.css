@@ -2,18 +2,18 @@
 ***
 ***  Custom CSS Master
 ***  Made by @guillaumeduhan
-***  Date: 21/04/2018 à 14:47:32
+***  Date: 04/07/2018 à 16:44:04
 ***
 **************/
 
 /* General */
 
 .col {
-  padding-left:0;
+  padding-left: 0;
 }
 
 textarea:focus, input:focus, select:focus, button, button:active, button:focus, :focus {
-  outline: none!important;
+  outline: none !important;
   box-shadow: none;
   -webkit-appearance: none;
 }
@@ -21,271 +21,303 @@ textarea:focus, input:focus, select:focus, button, button:active, button:focus, 
 /* Boxes */
 
 .box__module {
-  width:100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:25px;
-  margin:0 0 20px 0;
-  background:white;
-  border-radius:25px;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
-  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
+  padding: 25px;
+  margin: 0 0 20px 0;
+  background: white;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.045);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.045);
+  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.045);
 }
+
 .box__module .drag {
-  cursor:pointer;
-  height:25px;
-  width:25px!important;
+  cursor: pointer;
+  height: 25px;
+  width: 25px !important;
 }
+
 .box__module .drag img {
-  width:25px!important;
-  opacity:.5;
+  width: 25px !important;
+  opacity: .5;
 }
+
 .box__module .infos {
   width: 100%;
-  padding-left:25px;
+  padding-left: 25px;
 }
+
 .box__module .infos h2 {
-  font-size:16px;
-  font-weight:700;
-  color:#2B55A0;
-  margin:0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2B55A0;
+  margin: 0;
 }
+
 .box__module .infos p {
-  font-weight:700;
-  line-height:1.35;
-  margin:0;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
 }
+
 .box__module .infos h2, p {
-  margin:4px 0;
+  margin: 4px 0;
 }
+
 .box__module .infos a {
-  padding:20px 0;
+  padding: 20px 0;
 }
+
 .box__module .infos .time {
-  font-size:12px;
-  font-weight:300;
-  color:lightgrey;
+  font-size: 12px;
+  font-weight: 300;
+  color: lightgrey;
 }
+
 .box__module .buttons {
-  display:flex;
-  text-align:center;
-  margin:0 25px;
+  display: flex;
+  text-align: center;
+  margin: 0 25px;
 }
+
 .box__module .buttons .box__button {
-  font-size:14px;
-  margin:0 15px;
-  color:#DDD;
+  font-size: 14px;
+  margin: 0 15px;
+  color: #DDD;
 }
+
 .box__module .buttons .box__button p {
-  position:absolute;
-  right:200px;
-  display:none;
+  position: absolute;
+  right: 200px;
+  display: none;
 }
+
 .box__module .buttons .box__button .svg-inline--fa {
-  font-size:25px!important;
+  font-size: 25px !important;
 }
+
 .box__module .buttons .box__button:hover {
-  cursor:pointer;
-  color:#2B55A0;
-  transition:.25s;
+  cursor: pointer;
+  color: #2B55A0;
+  transition: .25s;
 }
+
 #abonnements .box__module .buttons {
-  width:100%;
+  width: 100%;
 }
+
 #abonnements .box__module .subscription .infos {
-  padding:0;
+  padding: 0;
 }
+
 .box__module .buttons .subscription {
-  width:33%;
-  margin:0 3px;
-  border-radius:25px;
+  width: 33%;
+  margin: 0 3px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding:7px 12px;
-  border:1px solid rgba(6, 59, 221, 0.1);
+  padding: 7px 12px;
+  border: 1px solid rgba(6, 59, 221, 0.1);
 }
+
 .box__module .buttons__hidden {
-  display:none;
+  display: none;
 }
+
 .box__module .buttons .subscription .infos .price {
-  color:#2B55A0;
+  color: #2B55A0;
 }
+
 .box__module .buttons .subscription .infos .date {
-  color:#2B55A0;
+  color: #2B55A0;
 }
+
 .box__module .buttons .subscription .infos .name {
-  font-size:12px;
+  font-size: 12px;
 }
+
 .box__module .buttons .subscription .fa-times {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1266px) {
   .box__module {
-    margin-bottom:25px;
+    margin-bottom: 25px;
   }
   .box__module .buttons .box__button p, .time {
-    display:none;
+    display: none;
   }
   .box__module .buttons {
-    display:inline-block;
-    margin:0;
+    display: inline-block;
+    margin: 0;
   }
   .disappear {
-    display:none;
+    display: none;
   }
   .box__module .buttons .subscription {
-    display:none;
+    display: none;
   }
   #abonnements .box__module .buttons {
-    width:auto;
+    width: auto;
   }
   .box__module .buttons__hidden {
-    display:block;
+    display: block;
   }
 }
 
 @media screen and (max-width: 640px) {
   .box__module {
-    margin-bottom:25px;
+    margin-bottom: 25px;
   }
   .box__module .buttons .box__button .svg-inline--fa {
-    font-size:19px!important;
+    font-size: 19px !important;
   }
   .box__module .buttons .box__button {
-    margin:0;
+    margin: 0;
   }
 }
 
 select {
-  font-size:12px;
-  background:transparent;
-  margin:5px 0;
+  font-size: 12px;
+  background: transparent;
+  margin: 5px 0;
 }
 
 option {
-  color:red;
+  color: red;
 }
 
 /* Buttons, modals */
 
-.v--modal-box.v--modal{
-  height:fit-content!important;
+.v--modal-box.v--modal {
+  height: fit-content !important;
 }
 
 @media screen and (max-width: 640px) {
-  .v--modal-box.v--modal{
-    width:100%!important;
+  .v--modal-box.v--modal {
+    width: 100% !important;
   }
 }
 
 .bouton {
-  margin:0 2px;
+  margin: 0 2px;
 }
+
 .bouton:hover {
-  background:#F8880F;
+  background: #F8880F;
 }
+
 .green__button {
-  background: -webkit-linear-gradient(top, #5bff3a 0%,#25db31 100%);
+  background: -webkit-linear-gradient(top, #5bff3a 0%, #25db31 100%);
 }
+
 .blue__button {
-  color:white;
+  color: white;
   background-color: #2B55A0;
 }
+
 .question__modal {
-  margin-top:auto;
-  margin-bottom:auto;
-  padding:25px;
-  text-align:center;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 25px;
+  text-align: center;
 }
+
 .question__modal .image {
-  width:75px;
-  border-radius:50px;
-  overflow:hidden;
+  width: 75px;
+  border-radius: 50px;
+  overflow: hidden;
 }
+
 .question__modal img {
-  width:100%;
+  width: 100%;
 }
 
 .question__modal .infos {
   width: 100%;
-  margin:25px 0;
+  margin: 25px 0;
 }
+
 .question__modal .infos h2 {
-  font-size:17px;
-  font-weight:700;
-  color:#2B55A0;
-  margin:0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2B55A0;
+  margin: 0;
 }
+
 .question__modal .infos p {
-  font-weight:700;
-  line-height:1.35;
-  margin:0;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
 }
+
 .question__modal .infos h2, p {
-  margin:4px 0;
+  margin: 4px 0;
 }
+
 .question__modal a {
-  padding:20px 0;
+  padding: 20px 0;
 }
+
 .question__modal .time {
-  font-size:12px;
-  font-weight:300;
-  color:lightgrey;
+  font-size: 12px;
+  font-weight: 300;
+  color: lightgrey;
 }
+
 .question__modal textarea {
-  width:100%;
-  border:1px solid #ddd;
-  border-radius:5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 /* Annonce box */
 
 .annonce__box {
-  position:absolute;
-  bottom:10px;
-  right:25px;
-  max-width:600px;
+  position: absolute;
+  bottom: 10px;
+  right: 25px;
+  max-width: 600px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:15px 25px;
-  margin:0 0 20px 0;
-  background:#249D3D;
-  font-weight:100;
-  color:white;
-  border-radius:2px;
-  -webkit-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
-  -moz-box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
-  box-shadow: 0px 0px 35px 5px rgba(0,0,0,0.045);
+  padding: 15px 25px;
+  margin: 0 0 20px 0;
+  background: #249D3D;
+  font-weight: 100;
+  color: white;
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.045);
+  -moz-box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.045);
+  box-shadow: 0px 0px 35px 5px rgba(0, 0, 0, 0.045);
   animation: slideUp 1s;
 }
 
 /* Transition */
 
 .fade-enter, .fade-leave-to {
-  opacity:0
+  opacity: 0
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition:opacity 3s;
+  transition: opacity 3s;
 }
 
 .v--modal-overlay .v--modal-box {
-  height:auto!important;
+  height: auto !important;
 }
 
 /* Keyframes */
 
 @keyframes slideUp {
   from {
-    opacity:0;
+    opacity: 0;
   }
-
   to {
-    opacity:1;
+    opacity: 1;
   }
 }
