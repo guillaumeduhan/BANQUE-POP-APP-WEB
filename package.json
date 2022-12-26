@@ -1,6 +1,7 @@
 {
   "name": "Cyberplus",
-  "version": "1.0.0",
+  "author": "Guillaume Duhan",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
